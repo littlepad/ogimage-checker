@@ -1,7 +1,7 @@
 const client = require('cheerio-httpcli');
 
 // callbackを指定しなかったのでPromiseオブジェクトが返る
-const p = client.fetch('https://tolot.com/');
+const p = client.fetch('https://google.co.jp/');
 p.then((result) => {
   // レスポンスヘッダを参照
   // console.log(result.response.headers);
