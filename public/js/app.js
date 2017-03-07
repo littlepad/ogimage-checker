@@ -3,6 +3,8 @@ const client = require('cheerio-httpcli');
 
 const app = express();
 app.set('view engine', 'jade');
+// 静的ファイルの設定
+app.use(express.static('public'));
 
 const server = app.listen(3000, () => {
   console.log(`Node.js is listening to PORT:${server.address().port}`);
