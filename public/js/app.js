@@ -2,6 +2,7 @@ const express = require('express');
 const client = require('cheerio-httpcli');
 
 const app = express();
+app.set('view engine', 'jade');
 
 const server = app.listen(3000, () => {
   console.log(`Node.js is listening to PORT:${server.address().port}`);
@@ -23,7 +24,11 @@ function getMeta(url) {
   });
 }
 
-app.get('/api/ogimg/list', (rea, res) => {
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Hey', message: 'Hello there' });
+});
+
+app.get('/api/ogimg/list', (req, res) => {
   Promise.all(URL_LIST.map(url => getMeta(url)))
     .then((results) => {
       const list = results.map(result => ({
