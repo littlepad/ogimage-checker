@@ -30,12 +30,10 @@ app.get('/api/ogimg/list', (rea, res) => {
         title: result.$('title').eq(0).text(),
         url: result.response.request.href,
         ogimg: result.$('meta[property="og:image"]').attr('content'),
-      }),
-    );
+      }));
       res.json(list);
     })
     .catch((err) => {
       console.log(err);
-      res.json(err);
     });
 });
