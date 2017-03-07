@@ -27,7 +27,7 @@ function getMeta(url) {
 }
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Hey', message: 'Hello there' });
+  res.render('index');
 });
 
 app.post('/api/ogimg/list', (req, res) => {
