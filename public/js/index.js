@@ -1,5 +1,5 @@
 const request = new XMLHttpRequest();
-request.open('GET', '/api/ogimg/list', true);
+request.open('POST', '/api/ogimg/list', true);
 request.onload = () => {
   console.log(request.response);
 };

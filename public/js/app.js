@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Hey', message: 'Hello there' });
 });
 
-app.get('/api/ogimg/list', (req, res) => {
+app.post('/api/ogimg/list', (req, res) => {
   Promise.all(URL_LIST.map(url => getMeta(url)))
     .then((results) => {
       const list = results.map(result => ({
