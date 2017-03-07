@@ -2,7 +2,7 @@ import PATH from './gulp/config';
 
 module.exports = {
   entry: {
-    index: `${PATH.js}checker.js`
+    index: `${PATH.js}app.js`
   },
   output: {
     path: require('path').resolve(`${PATH.public}js/`),

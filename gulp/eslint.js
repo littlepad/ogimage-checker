@@ -3,7 +3,7 @@ import eslint from 'gulp-eslint';
 import PATH from './config';
 
 export function lint() {
-  return gulp.src([`${PATH.js}**/*.js`])
+  return gulp.src([`${PATH.public}**/*.js`])
     .pipe(eslint())
     .pipe(eslint.format());
 }
