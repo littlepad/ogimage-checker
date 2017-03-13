@@ -47,16 +47,27 @@
 	'use strict';
 
 	var btn = document.getElementById('sendBtn');
-	btn.onclick = function () {
+	var textArea = document.getElementById('urls');
+
+	var parseText = function parseText(value) {
+	  var arr = value.split('\n');
+	  console.log(arr);
+	  return arr;
+	};
+
+	btn.onclick = function (e) {
+	  e.preventDefault();
 	  var request = new XMLHttpRequest();
 	  request.open('POST', '/api/ogimg/list', true);
+	  request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 	  request.onload = function () {
 	    console.log(request.response);
 	  };
 	  request.onerror = function () {
 	    console.log(request);
 	  };
-	  request.send(null);
+	  var urls = parseText(textArea.value);
+	  request.send(JSON.stringify({ urls: urls }));
 	};
 
 /***/ }
