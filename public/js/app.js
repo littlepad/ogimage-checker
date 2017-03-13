@@ -37,7 +37,7 @@ app.post('/api/ogimg/list', (req, res) => {
         url: result.response.request.href,
         ogimg: result.$('meta[property="og:image"]').attr('content'),
       }));
-      res.json(list);
+      res.json({ ogimgList: list });
     })
     .catch((err) => {
       console.log(err);
