@@ -1,5 +1,3 @@
-const textArea = document.getElementById('urls');
-
 const parseText = (value) => {
   const arr = value.split('\n');
   return arr;
@@ -24,6 +22,7 @@ const app = new Vue({
       request.onerror = () => {
         console.log(request);
       };
+      const textArea = document.getElementById('urls');
       const urls = parseText(textArea.value);
       console.log(urls);
       request.send(JSON.stringify({ urls }));

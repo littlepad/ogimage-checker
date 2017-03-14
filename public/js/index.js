@@ -46,8 +46,6 @@
 
 	'use strict';
 
-	var textArea = document.getElementById('urls');
-
 	var parseText = function parseText(value) {
 	  var arr = value.split('\n');
 	  return arr;
@@ -72,6 +70,7 @@
 	      request.onerror = function () {
 	        console.log(request);
 	      };
+	      var textArea = document.getElementById('urls');
 	      var urls = parseText(textArea.value);
 	      console.log(urls);
 	      request.send(JSON.stringify({ urls: urls }));
