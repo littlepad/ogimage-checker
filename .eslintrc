@@ -15,6 +15,7 @@
     'expect': 'expect',
     'beforeEach': 'beforeEach',
     'afterEach': 'afterEach',
+    'Vue': 'Vue',
   },
   "rules": {}
 }

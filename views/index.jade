@@ -3,10 +3,20 @@ html
     title og:img checker
   body
     h1 og:img checker
-    textarea(rows=10 cols=100 name='urls' id='urls')
-      |http://www.yahoo.co.jp/
-      |https://google.co.jp/
-      |http://www.apple.com/jp/
-    br
-    button#sendBtn(type='submit') send
+
+    #ogimgList
+      textarea(rows=10 cols=100 name='urls' id='urls')
+        | http://www.yahoo.co.jp/
+        | https://google.co.jp/
+        | http://www.apple.com/jp/
+      br
+      button(type='submit' v-on:click='fetch') send
+      ul
+        li(v-for='ogimg in ogimgList')
+          h2 {{ ogimg.title }}
+          p {{ ogimg.url }}
+          p
+            img(:src='ogimg.ogimg')
+
+    script(src='https://unpkg.com/vue')
     script(src='/js/index.js')

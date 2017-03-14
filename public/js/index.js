@@ -46,29 +46,38 @@
 
 	'use strict';
 
-	var btn = document.getElementById('sendBtn');
 	var textArea = document.getElementById('urls');
 
 	var parseText = function parseText(value) {
 	  var arr = value.split('\n');
-	  console.log(arr);
 	  return arr;
 	};
 
-	btn.onclick = function (e) {
-	  e.preventDefault();
-	  var request = new XMLHttpRequest();
-	  request.open('POST', '/api/ogimg/list', true);
-	  request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
-	  request.onload = function () {
-	    console.log(request.response);
-	  };
-	  request.onerror = function () {
-	    console.log(request);
-	  };
-	  var urls = parseText(textArea.value);
-	  request.send(JSON.stringify({ urls: urls }));
-	};
+	var app = new Vue({
+	  el: '#ogimgList',
+	  data: {
+	    ogimgList: []
+	  },
+	  methods: {
+	    fetch: function fetch(e) {
+	      e.preventDefault();
+	      var request = new XMLHttpRequest();
+	      request.open('POST', '/api/ogimg/list', true);
+	      request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+	      request.onload = function () {
+	        console.log(request.response);
+	        var obj = JSON.parse(request.response);
+	        app.ogimgList = obj.ogimgList;
+	      };
+	      request.onerror = function () {
+	        console.log(request);
+	      };
+	      var urls = parseText(textArea.value);
+	      console.log(urls);
+	      request.send(JSON.stringify({ urls: urls }));
+	    }
+	  }
+	});
 
 /***/ }
 /******/ ]);
