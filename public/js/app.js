@@ -35,9 +35,10 @@ app.post('/api/ogimg/list', (req, res) => {
       const list = results.map(result => ({
         title: result.$('title').eq(0).text(),
         url: result.response.request.href,
-        ogimg: result.$('meta[property="og:image"]').attr('content'),
+        ogImg: result.$('meta[property="og:image"]').attr('content'),
+        ogDescription: result.$('meta[property="og:description"]').attr('content'),
       }));
-      res.json({ ogimgList: list });
+      res.json({ ogImgList: list });
     })
     .catch((err) => {
       console.log(err);

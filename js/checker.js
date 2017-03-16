@@ -4,9 +4,9 @@ const parseText = (value) => {
 };
 
 const app = new Vue({
-  el: '#ogimgList',
+  el: '#ogImgList',
   data: {
-    ogimgList: [],
+    ogImgList: [],
   },
   methods: {
     fetch: (e) => {
@@ -17,7 +17,7 @@ const app = new Vue({
       request.onload = () => {
         console.log(request.response);
         const obj = JSON.parse(request.response);
-        app.ogimgList = obj.ogimgList;
+        app.ogImgList = obj.ogImgList;
       };
       request.onerror = () => {
         console.log(request);

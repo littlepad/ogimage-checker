@@ -7,19 +7,20 @@ html
       .l-content
         h1.l-heading og:img checker
 
-        #ogimgList
+        #ogImgList
           .l-textarea
             textarea.m-textarea(rows=8 cols=80 name='urls' id='urls' placeholder='Input URLs here.')
           .l-button
             button.m-button(type='submit' v-on:click='fetch') CHECK
           ul.m-list
-            li.m-item(v-for='ogimg in ogimgList')
+            li.m-item(v-for='ogImg in ogImgList')
               .m-item__ogimg
                 figure
-                  img(:src='ogimg.ogimg')
+                  img(:src='ogImg.ogImg')
               .m-item__info
-                h2.m-item__title {{ ogimg.title }}
-                p.m-item__url {{ ogimg.url }}
+                h2.m-item__title {{ ogImg.title }}
+                p.m-item__url {{ ogImg.url }}
+                p.m-item__description {{ ogImg.ogDescription }}
 
     script(src='https://unpkg.com/vue')
     script(src='/js/index.js')

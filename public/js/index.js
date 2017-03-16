@@ -52,9 +52,9 @@
 	};
 
 	var app = new Vue({
-	  el: '#ogimgList',
+	  el: '#ogImgList',
 	  data: {
-	    ogimgList: []
+	    ogImgList: []
 	  },
 	  methods: {
 	    fetch: function fetch(e) {
@@ -65,7 +65,7 @@
 	      request.onload = function () {
 	        console.log(request.response);
 	        var obj = JSON.parse(request.response);
-	        app.ogimgList = obj.ogimgList;
+	        app.ogImgList = obj.ogImgList;
 	      };
 	      request.onerror = function () {
 	        console.log(request);
