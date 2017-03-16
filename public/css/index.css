@@ -1,0 +1,75 @@
+@charset "UTF-8";
+html {
+  font-family: Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.l-container {
+  margin: 0;
+  padding: 0; }
+
+.l-content {
+  width: 80%;
+  margin: 20px auto; }
+
+.l-heading {
+  font-size: 20px; }
+
+.l-textarea {
+  margin-bottom: 10px; }
+
+.l-button {
+  text-align: center; }
+
+.m-textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+  border: solid 1px #999;
+  border-radius: 4px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2); }
+
+.m-button {
+  width: 40%;
+  padding: 15px 10px;
+  font-size: 14px;
+  color: #fff;
+  border: solid 1px #fb0;
+  border-radius: 4px;
+  background: #fc0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1), -1px -1px 1px rgba(0, 0, 0, 0.1); }
+
+.m-list {
+  padding: 0;
+  list-style: none; }
+
+.m-item {
+  display: table;
+  padding: 10px; }
+  .m-item__ogimg {
+    display: table-cell;
+    width: 200px; }
+    .m-item__ogimg > figure {
+      margin: 0; }
+      .m-item__ogimg > figure > img {
+        width: 100%;
+        height: auto;
+        vertical-align: top;
+        border: solid 1px #ddd;
+        border-radius: 2px; }
+  .m-item__info {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 10px; }
+  .m-item__title {
+    margin: 0;
+    font-size: 14px; }
+  .m-item__url {
+    margin: 0;
+    font-size: 13px; }

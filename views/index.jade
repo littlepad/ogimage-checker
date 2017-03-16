@@ -1,23 +1,25 @@
 html
   head
     title og:img checker
-    link(href='css/index.css' rel='stylesheet' type='text/css')
+    link(rel='stylesheet' href='css/index.css')
   body
-    h1 og:img checker
+    .l-container
+      .l-content
+        h1.l-heading og:img checker
 
-    #ogimgList
-      textarea(rows=10 cols=100 name='urls' id='urls')
-        | http://www.yahoo.co.jp/
-        | https://google.co.jp/
-        | http://www.apple.com/jp/
-      br
-      button(type='submit' v-on:click='fetch') send
-      ul
-        li(v-for='ogimg in ogimgList')
-          h2 {{ ogimg.title }}
-          p {{ ogimg.url }}
-          p
-            img(:src='ogimg.ogimg')
+        #ogimgList
+          .l-textarea
+            textarea.m-textarea(rows=8 cols=80 name='urls' id='urls' placeholder='Input URLs here.')
+          .l-button
+            button.m-button(type='submit' v-on:click='fetch') CHECK
+          ul.m-list
+            li.m-item(v-for='ogimg in ogimgList')
+              .m-item__ogimg
+                figure
+                  img(:src='ogimg.ogimg')
+              .m-item__info
+                h2.m-item__title {{ ogimg.title }}
+                p.m-item__url {{ ogimg.url }}
 
     script(src='https://unpkg.com/vue')
     script(src='/js/index.js')
