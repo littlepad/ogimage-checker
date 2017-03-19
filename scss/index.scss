@@ -65,7 +65,7 @@ body {
 
   &__ogimg {
     display: table-cell;
-    width: 200px;
+    width: 150px;
 
     & > figure {
       margin: 0;
@@ -77,6 +77,16 @@ body {
         border: solid 1px #ddd;
         border-radius: 2px;
       }
+    }
+
+    &--non {
+      height: 100px;
+      box-sizing: border-box;
+      text-align: center;
+      vertical-align: middle;
+      border: solid 1px #ddd;
+      border-radius: 2px;
+
     }
   }
   &__info {

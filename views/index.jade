@@ -14,9 +14,11 @@ html
             button.m-button(type='submit' v-on:click='fetch') CHECK
           ul.m-list
             li.m-item(v-for='ogImg in ogImgList')
-              .m-item__ogimg
+              .m-item__ogimg(v-if='ogImg.ogImg')
                 figure
                   img(:src='ogImg.ogImg')
+              .m-item__ogimg.m-item__ogimg--non(v-else) no image
+
               .m-item__info
                 h2.m-item__title {{ ogImg.title }}
                 p.m-item__url {{ ogImg.url }}

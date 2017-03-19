@@ -55,7 +55,7 @@ body {
   padding: 10px; }
   .m-item__ogimg {
     display: table-cell;
-    width: 200px; }
+    width: 150px; }
     .m-item__ogimg > figure {
       margin: 0; }
       .m-item__ogimg > figure > img {
@@ -64,6 +64,13 @@ body {
         vertical-align: top;
         border: solid 1px #ddd;
         border-radius: 2px; }
+    .m-item__ogimg--non {
+      height: 100px;
+      box-sizing: border-box;
+      text-align: center;
+      vertical-align: middle;
+      border: solid 1px #ddd;
+      border-radius: 2px; }
   .m-item__info {
     display: table-cell;
     vertical-align: top;
