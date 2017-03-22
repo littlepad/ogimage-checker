@@ -29,7 +29,12 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/ogimg/list', (req, res) => {
-  const urls = req.body.urls;
+  let urls = [];
+  // 不要な空白行を除去
+  req.body.urls.map((url) => {
+    if(url) urls.push(url);
+  });
+
   Promise.all(urls.map(url => getMeta(url)))
     .then((results) => {
       const list = results.map(result => {
