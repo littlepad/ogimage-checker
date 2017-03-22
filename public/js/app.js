@@ -19,7 +19,7 @@ function getMeta(url) {
     client.fetch(url).then((result) => {
       resolve(result);
     }).catch((err) => {
-      reject(err);
+      resolve(err);
     });
   });
 }
@@ -32,12 +32,23 @@ app.post('/api/ogimg/list', (req, res) => {
   const urls = req.body.urls;
   Promise.all(urls.map(url => getMeta(url)))
     .then((results) => {
-      const list = results.map(result => ({
-        title: result.$('title').eq(0).text(),
-        url: result.response.request.href,
-        ogImg: result.$('meta[property="og:image"]').attr('content'),
-        ogDescription: result.$('meta[property="og:description"]').attr('content'),
-      }));
+      const list = results.map(result => {
+        if (result instanceof Error) {
+          return {
+            title: 'Not Found',
+            url: result.url,
+            ogImg: '',
+            ogDescription: '',
+          };
+        } else {
+          return {
+            title: result.$('title').eq(0).text(),
+            url: result.response.request.href,
+            ogImg: result.$('meta[property="og:image"]').attr('content'),
+            ogDescription: result.$('meta[property="og:description"]').attr('content'),
+          };
+        }
+      });
       res.json({ ogImgList: list });
     })
     .catch((err) => {
