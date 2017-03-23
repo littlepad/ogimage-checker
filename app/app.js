@@ -5,8 +5,9 @@ const app = express();
 
 // テンプレートエンジン設定
 app.set('view engine', 'jade');
+app.set('views', './app/views');
 // 静的ファイル設定
-app.use(express.static('public'));
+app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
