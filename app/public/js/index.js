@@ -63,16 +63,12 @@
 	      request.open('POST', '/api/ogimg/list', true);
 	      request.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
 	      request.onload = function () {
-	        console.log(request.response);
 	        var obj = JSON.parse(request.response);
 	        app.ogImgList = obj.ogImgList;
 	      };
-	      request.onerror = function () {
-	        console.log(request);
-	      };
+	      request.onerror = function () {};
 	      var textArea = document.getElementById('urls');
 	      var urls = parseText(textArea.value);
-	      console.log(urls);
 	      request.send(JSON.stringify({ urls: urls }));
 	    }
 	  }
