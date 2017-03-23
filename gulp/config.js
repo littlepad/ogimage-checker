@@ -1,7 +1,7 @@
 const PATH = {
-  public: './public/',
-  js: './js/',
-  scss: './scss/',
+  public: './app/public/',
+  js: './resources/js/',
+  scss: './resources/scss/',
 };
 
 export default PATH;
