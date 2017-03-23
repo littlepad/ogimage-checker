@@ -10,11 +10,6 @@
     "sourceType": "module"
   },
   "globals": {
-    'it': 'it',
-    'describe': 'describe',
-    'expect': 'expect',
-    'beforeEach': 'beforeEach',
-    'afterEach': 'afterEach',
     'Vue': 'Vue',
   },
   "rules": {}
