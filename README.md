@@ -12,6 +12,8 @@ The following information is displayed from the specified url.
 
 ### Installation
 
+Git clone or download this repository, and install node modules.
+
 ```
 $ npm i
 ```
