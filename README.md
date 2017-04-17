@@ -1,8 +1,8 @@
-# og:img checker
+# og:image checker
 
 The following information is displayed from the specified url.
 
-- og:img
+- og:image
 - title (not og:title)
 - url (not og:url)
 - description (not og:description)
