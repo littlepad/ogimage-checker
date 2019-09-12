@@ -34,9 +34,9 @@ app.get('/', (req, res) => {
 
 app.post('/api/ogimg/list', (req, res) => {
   // 不要な空白行を除去
-  const urls = req.body.urls.filter(url => (url !== ''));
+  const urls = req.body.urls.filter((url) => (url !== ''));
 
-  Promise.all(urls.map(url => getMeta(url)))
+  Promise.all(urls.map((url) => getMeta(url)))
     .then((results) => {
       const list = results.map((result) => {
         if (result instanceof Error) {
