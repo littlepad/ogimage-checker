@@ -10,7 +10,7 @@
     "sourceType": "module"
   },
   "globals": {
-    'Vue': 'Vue',
+    "Vue": true,
   },
   "rules": {}
 }
