@@ -7,6 +7,6 @@ gulp.task('js', () => js());
 gulp.task('sass', () => sass());
 
 gulp.task('default', () => {
-  gulp.watch([`${PATH.js}**/*.js`, `${PATH.app}app.js`], ['lint', 'js']);
-  gulp.watch(`${PATH.scss}**/*.scss`, ['sass']);
+  gulp.watch([`${PATH.js}**/*.js`, `${PATH.app}app.js`], gulp.task('js'));
+  gulp.watch(`${PATH.scss}**/*.scss`, gulp.task('sass'));
 });
