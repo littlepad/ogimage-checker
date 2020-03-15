@@ -1,6 +1,7 @@
 const express = require('express');
 const client = require('cheerio-httpcli');
 const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(express.static('./app/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const server = app.listen(3000, () => {
+const server = app.listen(port, () => {
   /* eslint-disable no-console */
   console.log(`Node.js is listening to PORT:${server.address().port}`);
   /* eslint-enable no-console */

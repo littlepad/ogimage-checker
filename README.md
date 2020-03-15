@@ -25,6 +25,13 @@ $ npm i
 ```
 $ npm start
 ```
+
+Also you can specify access port like below (default is 3000).
+
+```
+PORT=3001 npm start
+```
+
 2. Access http://localhost:3000/ on browser.
 3. Input urls in the textarea and click the CHECK button.
 
