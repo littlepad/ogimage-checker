@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint resources/js/*.js app/app.js gulpfile.babel.js gulp/*.js",
     "start": "node app/app.js",
-    "dev": "gulp & node app/app.js"
+    "dev": "gulp & node app/app.js",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
