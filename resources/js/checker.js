@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 const parseText = (value) => {
   const arr = value.split('\n');
   return arr;
