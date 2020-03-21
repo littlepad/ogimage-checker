@@ -7,7 +7,6 @@ The following information is displayed from the specified url.
 - url (not og:url)
 - description (not og:description)
 
-
 ## Installation and Usage
 
 ### Installation
@@ -15,7 +14,7 @@ The following information is displayed from the specified url.
 Git clone or download this repository, and install node modules.
 
 ```
-$ npm i
+$ yarn i
 ```
 
 ### Usage
@@ -23,13 +22,13 @@ $ npm i
 1. Input the following command and run in the terminal.
 
 ```
-$ npm start
+$ yarn start
 ```
 
 Also you can specify access port like below (default is 3000).
 
 ```
-PORT=3001 npm start
+$ PORT=3001 yarn start
 ```
 
 2. Access http://localhost:3000/ on browser.
@@ -37,8 +36,22 @@ PORT=3001 npm start
 
 ## Task for Development
 
-sass + webpack(js) + eslint + server(express)
+### Development
+
+webpack + server(express)
 
 ```
-$ npm run dev
+$ yarn run dev
+```
+
+### Lint
+
+```
+$ yarn run lint
+```
+
+### Build
+
+```
+$ yarn run build
 ```
