@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint resources/js/*.js app/app.js gulpfile.babel.js gulp/*.js",
+    "lint": "eslint resources/js/*.js",
     "start": "node app/app.js",
-    "dev": "gulp & node app/app.js",
+    "dev": "webpack --mode development && yarn run start",
     "build": "webpack --mode production"
   },
   "repository": {
