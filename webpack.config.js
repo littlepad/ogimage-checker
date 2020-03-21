@@ -59,11 +59,6 @@ module.exports = (env, argv) => {
       ],
     },
     devtool: isEnvDevelopment ? 'source-map' : 'nosources-source-map',
-    devServer: {
-      host: '0.0.0.0',
-      contentBase: path.join(__dirname, './app/public'),
-      watchContentBase: true,
-    },
     resolve: {
       alias: {
         'vue$': 'vue/dist/vue.esm.js'
