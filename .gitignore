@@ -1,3 +1,5 @@
 node_modules
 .idea
 app/public/js/*.js.map
+app/public/css/*.map
+app/public/css/*.js
